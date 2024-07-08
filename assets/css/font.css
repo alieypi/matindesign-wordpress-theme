@@ -1,0 +1,227 @@
+/* SIARA */
+@font-face {
+  font-family: "Saira";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira Regular"), url("../font/Saira/Saira-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira Thin"), url("../font/Saira/Saira-Thin.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira ExtraLight";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira ExtraLight"), url("../font/Saira/Saira-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira Light"), url("../font/Saira/Saira-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira Medium"), url("../font/Saira/Saira-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira SemiBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira SemiBold"), url("../font/Saira/Saira-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira Bold"), url("../font/Saira/Saira-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira ExtraBold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira ExtraBold"), url("../font/Saira/Saira-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Saira Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Saira Black"), url("../font/Saira/Saira-Black.woff") format("woff");
+}
+
+/* PEYDA */
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-Thin.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-Thin.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-ExtraLight.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-ExtraLight.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-Light.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-Light.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-Medium.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-Medium.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-SemiBold.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-SemiBold.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-ExtraBold.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-ExtraBold.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-Black.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-Black.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-Bold.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-Bold.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: Peyda;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/Peyda/woff2/PeydaWebFaNum-Regular.woff2") format("woff2"),
+    /* FF39+,Chrome36+, Opera24+*/ url("../font/Peyda/woff/PeydaWebFaNum-Regular.woff") format("woff"); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+/* Century Gothic */
+@font-face {
+  font-family: "CG";
+  src: url("../font/Century Gothic/CenturyGothic-Italic.eot");
+  src: local("Century Gothic Italic"), local("CenturyGothic-Italic"),
+    url("../font/Century Gothic/CenturyGothic-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../font/Century Gothic/CenturyGothic-Italic.woff") format("woff"), url("../font/Century Gothic/CenturyGothic-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CG";
+  src: url("../font/Century Gothic/CenturyGothic.eot");
+  src: local("CG"), local("CenturyGothic"), url("../font/Century Gothic/CenturyGothic.eot?#iefix") format("embedded-opentype"),
+    url("../font/Century Gothic/CenturyGothic.woff") format("woff"), url("../font/Century Gothic/CenturyGothic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CG";
+  src: url("../font/Century Gothic/CenturyGothic-Bold.eot");
+  src: local("Century Gothic Bold"), local("CenturyGothic-Bold"),
+    url("../font/Century Gothic/CenturyGothic-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../font/Century Gothic/CenturyGothic-Bold.woff") format("woff"), url("../font/Century Gothic/CenturyGothic-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CG";
+  src: url("../font/Century Gothic/CenturyGothic-BoldItalic.eot");
+  src: local("Century Gothic Bold Italic"), local("CenturyGothic-BoldItalic"),
+    url("../font/Century Gothic/CenturyGothic-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("../font/Century Gothic/CenturyGothic-BoldItalic.woff") format("woff"),
+    url("../font/Century Gothic/CenturyGothic-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* YEKAN BAKH */
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../font/yekan/woff/YekanBakh-Thin.woff") format("woff"), url("../font/yekan/woff2/YekanBakh-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../font/yekan/woff/YekanBakh-Light.woff") format("woff"), url("../font/yekan/woff2/YekanBakh-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/yekan/woff/YekanBakh-Regular.woff") format("woff"), url("../font/yekan/woff2/YekanBakh-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../font/yekan/woff/YekanBakh-SemiBold.woff") format("woff"), url("../font/yekan/woff2/YekanBakh-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: bold;
+  src: url("../font/yekan/woff/YekanBakh-Bold.woff") format("woff"), url("../font/yekan/woff2/YekanBakh-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: 800;
+  src: url("fonts/woff/YekanBakh-ExtraBold.woff") format("woff"), url("fonts/woff2/YekanBakh-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/woff/YekanBakh-Black.woff") format("woff"), url("fonts/woff2/YekanBakh-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: YekanBakh;
+  font-style: normal;
+  font-weight: 950;
+  src: url("fonts/woff/YekanBakh-ExtraBlack.woff") format("woff"), url("fonts/woff2/YekanBakh-ExtraBlack.woff2") format("woff2");
+}

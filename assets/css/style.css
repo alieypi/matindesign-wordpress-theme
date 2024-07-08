@@ -1,0 +1,100 @@
+:root {
+  --main: #ff7900;
+}
+
+body {
+  font-family: "CG", "YekanBakh";
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #fff;
+}
+
+* {
+  outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+  border-radius: 10px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea {
+  transition: 0.3s;
+  width: 100%;
+  border: 1px solid #d7d7d7;
+  height: 40px;
+  padding: 4px 12px;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.wpcf7 input[type="text"].wpcf7-not-valid,
+.wpcf7 input[type="email"].wpcf7-not-valid,
+.wpcf7 textarea.wpcf7-not-valid {
+  border-color: red;
+}
+
+.wpcf7 textarea {
+  height: auto;
+}
+
+.wpcf7 input[type="text"]::placeholder,
+.wpcf7 input[type="email"]::placeholder,
+.wpcf7 textarea::placeholder {
+  color: #d7d7d7;
+}
+
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 textarea:focus {
+  border-color: #9d9d9d;
+}
+
+.wpcf7 input[type="submit"] {
+  transition: 0.3s;
+  border: 1px solid var(--main);
+  padding: 8px 32px;
+  border-radius: 50px;
+  margin-top: 8px;
+  color: var(--main);
+  cursor: pointer;
+}
+
+.wpcf7 input[type="submit"]:hover {
+  background-color: var(--main);
+  color: white;
+}
+
+.wpcf7 .wpcf7-response-output {
+  border: none !important;
+}
