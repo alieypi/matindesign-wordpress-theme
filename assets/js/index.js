@@ -6,6 +6,21 @@ if (aboutTabs) {
   const enData = document.getElementById("about-en");
   const faData = document.getElementById("about-fa");
 
+  if (aboutTabsButtons.length === 1) {
+    aboutTabsButtons[0].classList.add("active");
+
+    switch (aboutTabsButtons[0].id) {
+      case "en":
+        faData.classList.remove("active");
+        enData.classList.add("active");
+        break;
+      case "fa":
+        enData.classList.remove("active");
+        faData.classList.add("active");
+        break;
+    }
+  }
+
   aboutTabsButtons.forEach((button) => {
     button.addEventListener("click", () => {
       aboutTabsButtons.forEach((_) => _.classList.remove("active"));

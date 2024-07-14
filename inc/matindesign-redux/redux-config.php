@@ -329,9 +329,9 @@ Redux::set_section(
         'fields'     => array(
             array(
                 'id'       => 'projects-graphic-gallery',
-                'type'     => 'multi_media',
+                'type'     => 'gallery',
                 'title'    => esc_html__('Projects Gallery', 'matindesign'),
-                'max_file_upload' => 0,
+                'class'     => "project-gallery",
             ),
         ),
     )
@@ -346,9 +346,9 @@ Redux::set_section(
         'fields'     => array(
             array(
                 'id'       => 'projects-sketch-gallery',
-                'type'     => 'multi_media',
+                'type'     => 'gallery',
                 'title'    => esc_html__('Projects Gallery', 'matindesign'),
-                'max_file_upload' => 0,
+                'class'     => "sketch-gallery",
             ),
         ),
     )
@@ -363,9 +363,9 @@ Redux::set_section(
         'fields'     => array(
             array(
                 'id'       => 'projects-architecture-gallery',
-                'type'     => 'multi_media',
+                'type'     => 'gallery',
                 'title'    => esc_html__('Projects Gallery', 'matindesign'),
-                'max_file_upload' => 0,
+                'class'     => "architecture-gallery",
             ),
         ),
     )
@@ -380,9 +380,9 @@ Redux::set_section(
         'fields'     => array(
             array(
                 'id'       => 'projects-photography-gallery',
-                'type'     => 'multi_media',
+                'type'     => 'gallery',
                 'title'    => esc_html__('Projects Gallery', 'matindesign'),
-                'max_file_upload' => 0,
+                'class'     => "photography-gallery",
             ),
         ),
     )
@@ -397,9 +397,9 @@ Redux::set_section(
         'fields'     => array(
             array(
                 'id'       => 'projects-webdesign-gallery',
-                'type'     => 'multi_media',
+                'type'     => 'gallery',
                 'title'    => esc_html__('Projects Gallery', 'matindesign'),
-                'max_file_upload' => 0,
+                'class'     => "webdesign-gallery",
             ),
         ),
     )
@@ -443,6 +443,13 @@ Redux::set_section(
         'customizer_width' => '700px',
         'fields'           => array(
             array(
+                'id'       => 'persian-about-check',
+                'type'     => 'checkbox',
+                'title'    => esc_html__('Display Persian About', 'matindesign'),
+                'subtitle' => esc_html__('Show Persian About', 'matindesign'),
+                'default'  => '1', // 1 = on | 0 = off.
+            ),
+            array(
                 'id'       => 'persian-about-title',
                 'type'     => 'text',
                 'title'    => esc_html__('Title', 'matindesign'),
@@ -474,6 +481,13 @@ Redux::set_section(
         'subsection'       => true,
         'customizer_width' => '700px',
         'fields'           => array(
+            array(
+                'id'       => 'english-about-check',
+                'type'     => 'checkbox',
+                'title'    => esc_html__('Display English About', 'matindesign'),
+                'subtitle' => esc_html__('Show English About', 'matindesign'),
+                'default'  => '1', // 1 = on | 0 = off.
+            ),
             array(
                 'id'       => 'english-about-title',
                 'type'     => 'text',
@@ -623,6 +637,26 @@ Redux::set_section(
         'desc'             => esc_html__('Sidebar Section', 'matindesign'),
         'customizer_width' => '400px',
         'icon'             => 'el el-th-list',
+    )
+);
+
+Redux::set_section(
+    $opt_name,
+    array(
+        'title'            => esc_html__('Sub Logo', 'matindesign'),
+        'id'               => 'sidebar-sublogo',
+        'subsection'       => true,
+        'customizer_width' => '700px',
+        'fields'           => array(
+            array(
+                'id'       => 'sidebar-sublogo-upload',
+                'type'     => 'media',
+                'title'    => esc_html__('Sub Logo', 'matindesign'),
+                'desc'     => esc_html__('Upload Sub Logo', 'matindesign'),
+                'url'      => false,
+                'preview'  => true,
+            ),
+        ),
     )
 );
 

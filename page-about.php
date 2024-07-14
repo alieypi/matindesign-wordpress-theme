@@ -15,21 +15,22 @@
                 </div>
                 <div class="basis-7/12">
                     <div class="h-full relative bg-[#f5f5f5] rounded-[8px] overflow-hidden">
-                        <div class="overlay absolute left-0 top-0 opacity-[0.05]">
-                            <img src="<?php echo get_theme_file_uri() ?>/assets/img/matn-min.png" />
-                        </div>
                         <div class="lg:p-8 p-4">
                             <ul id="about-tabs" class="flex flex-row border-b border-[#dddddd]">
-                                <li>
-                                    <button id="en" class="[&.active]:text-[--main] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[CG] active" data-about-tabs="en">
-                                        <span><?php echo $matindesign_redux["english-about-title"] ?></span>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button id="fa" class="[&.active]:text-[--main] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[YekanBakh]" data-about-tabs="fa">
-                                        <span><?php echo $matindesign_redux["persian-about-title"] ?></span>
-                                    </button>
-                                </li>
+                                <?php if ($matindesign_redux["english-about-check"]) : ?>
+                                    <li>
+                                        <button id="en" class="[&.active]:text-[--main] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[CG] active" data-about-tabs="en">
+                                            <span><?php echo $matindesign_redux["english-about-title"] ?></span>
+                                        </button>
+                                    </li>
+                                <?php endif; ?>
+                                <?php if ($matindesign_redux["persian-about-check"]) : ?>
+                                    <li>
+                                        <button id="fa" class="[&.active]:text-[--main] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[YekanBakh]" data-about-tabs="fa">
+                                            <span><?php echo $matindesign_redux["persian-about-title"] ?></span>
+                                        </button>
+                                    </li>
+                                <?php endif; ?>
                             </ul>
                             <div class="border-x border-b border-[#ddd] relative p-8">
                                 <div id="about-en" class="[&.active]:block hidden active font-[CG]">

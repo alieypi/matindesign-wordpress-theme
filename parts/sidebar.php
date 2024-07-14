@@ -9,9 +9,11 @@
             }
             ?>
         </div>
-        <div class="flex justify-center mt-2">
-            <img src="<?php echo get_theme_file_uri("assets/img/matindesign.png") ?>" alt="" />
-        </div>
+        <?php if ($matindesign_redux["sidebar-sublogo-upload"]) : ?>
+            <div class="flex justify-center mt-2">
+                <img src="<?php echo $matindesign_redux["sidebar-sublogo-upload"]["url"] ?>" alt="" />
+            </div>
+        <?php endif; ?>
         <div class="flex justify-center mt-10">
             <ul id=sidebar-tabs class=" w-full flex flex-row lg:flex-col gap-x-8 w-full justify-center px-8 lg:divide-y divide-[#dedede]">
                 <li>

@@ -9,14 +9,14 @@ $architectureArr = $matindesign_redux["projects-architecture-gallery"];
 $photographyArr = $matindesign_redux["projects-photography-gallery"];
 $webdesignArr = $matindesign_redux["projects-webdesign-gallery"];
 
-$graphicArr = !is_array($graphicArr) ? [] : $graphicArr;
-$sketchArr = !is_array($sketchArr) ? [] : $sketchArr;
-$architectureArr = !is_array($architectureArr) ? [] : $architectureArr;
-$photographyArr = !is_array($photographyArr) ? [] : $photographyArr;
-$webdesignArr = !is_array($webdesignArr) ? [] : $webdesignArr;
-
+$graphicArr = strlen($graphicArr) == 0 ? [] : explode(",", $graphicArr);
+$sketchArr = strlen($sketchArr) == 0 ? [] : explode(",", $sketchArr);
+$architectureArr = strlen($architectureArr) == 0 ? [] : explode(",", $architectureArr);
+$photographyArr = strlen($photographyArr) == 0 ? [] : explode(",", $photographyArr);
+$webdesignArr = strlen($webdesignArr) == 0 ? [] : explode(",", $webdesignArr);
 
 $mergedArray = array_merge($graphicArr, $sketchArr, $architectureArr, $photographyArr, $webdesignArr);
+rsort($mergedArray)
 ?>
 
 <body>
@@ -74,52 +74,52 @@ $mergedArray = array_merge($graphicArr, $sketchArr, $architectureArr, $photograp
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
             <?php foreach ($mergedArray as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo $img ?>" alt="" />
+                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
         </div>
         <div data-tab="graphic" class="project [&.active]:block hidden">
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($matindesign_redux["projects-graphic-gallery"] as $img) : ?>
+            <?php foreach ($graphicArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo $img ?>" alt="" />
+                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
         </div>
         <div data-tab="sketch" class="project [&.active]:block hidden">
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($matindesign_redux["projects-sketch-gallery"] as $img) : ?>
+            <?php foreach ($sketchArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo $img ?>" alt="" />
+                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
         </div>
         <div data-tab="architecture" class="project [&.active]:block hidden">
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($matindesign_redux["projects-architecture-gallery"] as $img) : ?>
+            <?php foreach ($architectureArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo $img ?>" alt="" />
+                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
         </div>
         <div data-tab="photography" class="project [&.active]:block hidden">
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($matindesign_redux["projects-photography-gallery"] as $img) : ?>
+            <?php foreach ($photographyArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo $img ?>" alt="" />
+                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
         </div>
         <div data-tab="webdesign" class="project [&.active]:block hidden">
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($matindesign_redux["projects-webdesign-gallery"] as $img) : ?>
+            <?php foreach ($webdesignArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo $img ?>" alt="" />
+                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
