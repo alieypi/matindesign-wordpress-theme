@@ -77,12 +77,12 @@
             </div>
           </div>
         </div>
-        <?php if ($matindesign_redux["contact-form-check"]) : ?>
+        <?php if ($matindesign_redux["contact-form-check"] && $matindesign_redux["contact-form-shortcode"]) : ?>
           <div class="mt-8">
             <div class="flex flex-col items-center">
               <strong class="text-[18px]">Can I help you?</strong>
               <div class="xl:w-[700px] lg:w-[500px] w-full mt-4">
-                <?php echo do_shortcode('[contact-form-7 id="2387141" title="Contact"]'); ?>
+                <?php echo do_shortcode($matindesign_redux["contact-form-shortcode"]); ?>
               </div>
             </div>
           </div>

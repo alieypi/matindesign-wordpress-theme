@@ -68,7 +68,7 @@ const sidebarTabs = document.querySelectorAll("#sidebar-tabs a");
 const param = getRouteParam();
 
 sidebarTabs.forEach((tab) => {
-  if (tab.id === "home" && param.toLowerCase() === "matindesign") {
+  if (tab.id === "home" && (!param || param === "" || param.toLowerCase() === "matindesign")) {
     tab.classList.add("active");
   } else if (param.toLowerCase() === tab.id) {
     tab.classList.add("active");

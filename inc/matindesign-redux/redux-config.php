@@ -561,6 +561,12 @@ Redux::set_section(
                 'title'    => esc_html__('Display Contact Form', 'matindesign'),
                 'default'  => '1', // 1 = on | 0 = off.
             ),
+            array(
+                'id'       => 'contact-form-shortcode',
+                'type'     => 'text',
+                'title'    => esc_html__('Short Code', 'matindesign'),
+                'subtitle' => esc_html__('Enter Short Code', 'matindesign'),
+            ),
         ),
     )
 );
