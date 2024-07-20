@@ -28,45 +28,28 @@ rsort($mergedArray)
       <div class="justify-end lg:flex hidden">
         <ul id="main-tabs" class="flex flex-row lg:gap-2 xl:gap-4">
           <li>
-            <button id="all" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[--main] [&.active]:text-[white] duration-300 hover:text-[--main] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)] active" data-tabs="all">
+            <button id="all" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[<?php echo $matindesign_redux["site-main-color"] ?>] [&.active]:text-[white] duration-300 hover:text-[<?php echo $matindesign_redux["site-main-color"] ?>] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)] active" data-tabs="all">
               <span>All</span>
             </button>
           </li>
-          <?php if (count($graphicArr) > 0) : ?>
-            <li>
-              <button id="graphic" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[--main] [&.active]:text-[white] duration-300 hover:text-[--main] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)]" data-tabs="graphic">
-                <span>Graphic</span>
-              </button>
-            </li>
-          <?php endif; ?>
-          <?php if (count($sketchArr) > 0) : ?>
-            <li>
-              <button id="sketch" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[--main] [&.active]:text-[white] duration-300 hover:text-[--main] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)]" data-tabs="sketch">
-                <span>Sketch</span>
-              </button>
-            </li>
-          <?php endif; ?>
-          <?php if (count($architectureArr) > 0) : ?>
-            <li>
-              <button id="architecture" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[--main] [&.active]:text-[white] duration-300 hover:text-[--main] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)]" data-tabs="architecture">
-                <span>Architecture</span>
-              </button>
-            </li>
-          <?php endif; ?>
-          <?php if (count($photographyArr) > 0) : ?>
-            <li>
-              <button id="photography" class="xl:px-[20px] px-[14px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[--main] [&.active]:text-[white] duration-300 hover:text-[--main] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)]" data-tabs="photography">
-                <span>Photography</span>
-              </button>
-            </li>
-          <?php endif; ?>
-          <?php if (count($webdesignArr) > 0) : ?>
-            <li>
-              <button id="webdesign" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[--main] [&.active]:text-[white] duration-300 hover:text-[--main] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)]" data-tabs="webdesign">
-                <span>WebDesign</span>
-              </button>
-            </li>
-          <?php endif; ?>
+          <?php
+          $tabs = $matindesign_redux["site-tabs-sort"]["tabs"];
+          if ($tabs) : foreach ($tabs as $key => $value) :
+              if ($key === "placebo") {
+                continue;
+              };
+              $arr = $matindesign_redux["projects-" . $key . "-gallery"];
+              $arr = strlen($arr) == 0 ? [] : explode(",", $arr);
+              if (count($arr) > 0) :
+          ?>
+                <li>
+                  <button id="<?php echo $key ?>" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[<?php echo $matindesign_redux["site-main-color"] ?>] [&.active]:text-[white] duration-300 hover:text-[<?php echo $matindesign_redux["site-main-color"] ?>] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)]" data-tabs="graphic">
+                    <span><?php echo $value ?></span>
+                  </button>
+                </li>
+          <?php endif;
+            endforeach;
+          endif; ?>
         </ul>
       </div>
       <div id="projects">
@@ -74,7 +57,7 @@ rsort($mergedArray)
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
             <?php foreach ($mergedArray as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
+                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
@@ -83,7 +66,7 @@ rsort($mergedArray)
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
             <?php foreach ($graphicArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
+                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
@@ -92,7 +75,7 @@ rsort($mergedArray)
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
             <?php foreach ($sketchArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
+                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
@@ -101,7 +84,7 @@ rsort($mergedArray)
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
             <?php foreach ($architectureArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
+                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
@@ -110,7 +93,7 @@ rsort($mergedArray)
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
             <?php foreach ($photographyArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
+                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>
@@ -119,7 +102,7 @@ rsort($mergedArray)
           <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
             <?php foreach ($webdesignArr as $img) : ?>
               <li class="mb-2">
-                <img class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
+                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
               </li>
             <?php endforeach; ?>
           </ul>

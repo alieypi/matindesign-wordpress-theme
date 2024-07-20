@@ -28,7 +28,6 @@ body {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--main);
   border-radius: 10px;
 }
 .swiper-slide {
@@ -82,17 +81,11 @@ body {
 
 .wpcf7 input[type="submit"] {
   transition: 0.3s;
-  border: 1px solid var(--main);
+  border: 1px solid;
   padding: 8px 32px;
   border-radius: 50px;
   margin-top: 8px;
-  color: var(--main);
   cursor: pointer;
-}
-
-.wpcf7 input[type="submit"]:hover {
-  background-color: var(--main);
-  color: white;
 }
 
 .wpcf7 .wpcf7-response-output {

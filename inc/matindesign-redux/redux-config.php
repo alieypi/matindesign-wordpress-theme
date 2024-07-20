@@ -312,6 +312,46 @@ Redux::set_help_sidebar($opt_name, $content);
 Redux::set_section(
     $opt_name,
     array(
+        'title'            => esc_html__('Site Settings', 'matindesign'),
+        'id'               => 'site-settings',
+        'customizer_width' => '400px',
+        'icon'             => 'el el-cog',
+        'fields'     => array(
+            array(
+                'id'          => 'site-main-color',
+                'type'        => 'color',
+                'output'      => array(
+                    'border-color'     => '.wpcf7 input[type="submit"]',
+                    'important' => true,
+                ),
+                'title'       => esc_html__('Site Main Color', 'matindesign'),
+                'default'     => '#000000',
+                // 'color_alpha' => true,
+                'transparent' => false,
+                'validate'    => 'color',
+            ),
+            array(
+                'id'       => 'site-tabs-sort',
+                'type'     => 'sorter',
+                'title'    => 'Sort Main Tabs',
+                'options'  => array(
+                    'tabs'  => array(
+                        'graphic' => 'Graphic',
+                        'sketch'     => 'Sketch',
+                        'architecture'     => 'Architecture',
+                        'photography' => 'Photography',
+                        'webdesign'   => 'UI & UX',
+                    ),
+                ),
+            ),
+        ),
+    )
+);
+
+
+Redux::set_section(
+    $opt_name,
+    array(
         'title'            => esc_html__('Projects', 'matindesign'),
         'id'               => 'projects',
         'desc'             => esc_html__('Projects Section', 'matindesign'),

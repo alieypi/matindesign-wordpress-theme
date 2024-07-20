@@ -19,14 +19,14 @@
                             <ul id="about-tabs" class="flex flex-row border-b border-[#dddddd]">
                                 <?php if ($matindesign_redux["english-about-check"]) : ?>
                                     <li>
-                                        <button id="en" class="[&.active]:text-[--main] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[CG] active" data-about-tabs="en">
+                                        <button id="en" class="[&.active]:text-[<?php echo $matindesign_redux["site-main-color"] ?>] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[CG] active" data-about-tabs="en">
                                             <span><?php echo $matindesign_redux["english-about-title"] ?></span>
                                         </button>
                                     </li>
                                 <?php endif; ?>
                                 <?php if ($matindesign_redux["persian-about-check"]) : ?>
                                     <li>
-                                        <button id="fa" class="[&.active]:text-[--main] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[YekanBakh]" data-about-tabs="fa">
+                                        <button id="fa" class="[&.active]:text-[<?php echo $matindesign_redux["site-main-color"] ?>] text-[18px] px-[25px] py-[20px] text-[#737373] border-x border-t border-transparent [&.active]:border-[#ddd] [&.active]:bg-[#f5f5f5] translate-y-[1px] font-[YekanBakh]" data-about-tabs="fa">
                                             <span><?php echo $matindesign_redux["persian-about-title"] ?></span>
                                         </button>
                                     </li>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <?php if ($matindesign_redux["about-brands-check"] && count($matindesign_redux["about-collabs-gallery"]) > 0) : ?>
-                <div class="mt-10 text-[--main]">
+                <div class="mt-10 text-[<?php echo $matindesign_redux["site-main-color"] ?>]">
                     <span>Cooperation With Companies</span>
                 </div>
                 <hr class="my-2 hidden lg:block" />
