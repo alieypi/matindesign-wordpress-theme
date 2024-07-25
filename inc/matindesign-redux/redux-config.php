@@ -320,15 +320,36 @@ Redux::set_section(
             array(
                 'id'          => 'site-main-color',
                 'type'        => 'color',
-                'output'      => array(
-                    'border-color'     => '.wpcf7 input[type="submit"]',
-                    'important' => true,
-                ),
                 'title'       => esc_html__('Site Main Color', 'matindesign'),
                 'default'     => '#000000',
                 // 'color_alpha' => true,
                 'transparent' => false,
                 'validate'    => 'color',
+            ),
+            array(
+                'id'          => 'site-background-color',
+                'type'        => 'color',
+                'title'       => esc_html__('Site Background Color', 'matindesign'),
+                'default'     => '#ffffff',
+                // 'color_alpha' => true,
+                'transparent' => false,
+                'validate'    => 'color',
+            ),
+            array(
+                'id'          => 'site-sidebar-color',
+                'type'        => 'color',
+                'title'       => esc_html__('Site Sidebar Color', 'matindesign'),
+                'default'     => '#ffffff',
+                // 'color_alpha' => true,
+                'transparent' => false,
+                'validate'    => 'color',
+            ),
+            array(
+                'id'       => 'site-sidebar-border-check',
+                'type'     => 'checkbox',
+                'title'    => esc_html__('Sidebar Border', 'matindesign'),
+                'subtitle' => esc_html__('Enable Sidebar Border', 'matindesign'),
+                'default'  => '0', // 1 = on | 0 = off.
             ),
             array(
                 'id'       => 'site-tabs-sort',

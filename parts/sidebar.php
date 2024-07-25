@@ -1,6 +1,6 @@
 <?php global $matindesign_redux; ?>
 
-<aside class="sidebar border-r border-r-[#dedede] flex flex-col justify-between p-3 w-full lg:w-[250px] lg:h-full h-auto">
+<aside class="bg-[<?php echo $matindesign_redux["site-sidebar-color"] ?>] sidebar <?php if ($matindesign_redux["site-sidebar-border-check"]) echo 'border-r border-r-[#dedede]' ?> flex flex-col justify-between p-3 w-full lg:w-[250px] lg:h-full h-auto">
     <div>
         <div class="flex justify-center mt-8">
             <?php

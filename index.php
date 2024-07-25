@@ -3,20 +3,25 @@
 <?php global $matindesign_redux; ?>
 
 <?php
-$graphicArr = $matindesign_redux["projects-graphic-gallery"];
-$sketchArr = $matindesign_redux["projects-sketch-gallery"];
-$architectureArr = $matindesign_redux["projects-architecture-gallery"];
-$photographyArr = $matindesign_redux["projects-photography-gallery"];
-$webdesignArr = $matindesign_redux["projects-webdesign-gallery"];
+$tabs = $matindesign_redux["site-tabs-sort"]["tabs"];
+$filteredTabs = array_filter($tabs, function ($tab) {
+  return $tab !== "placebo";
+});
 
-$graphicArr = strlen($graphicArr) == 0 ? [] : explode(",", $graphicArr);
-$sketchArr = strlen($sketchArr) == 0 ? [] : explode(",", $sketchArr);
-$architectureArr = strlen($architectureArr) == 0 ? [] : explode(",", $architectureArr);
-$photographyArr = strlen($photographyArr) == 0 ? [] : explode(",", $photographyArr);
-$webdesignArr = strlen($webdesignArr) == 0 ? [] : explode(",", $webdesignArr);
+$data = array(
+  "all" => []
+);
 
-$mergedArray = array_merge($graphicArr, $sketchArr, $architectureArr, $photographyArr, $webdesignArr);
-rsort($mergedArray)
+foreach ($filteredTabs as $key => $value) {
+  $ImageIds = $matindesign_redux["projects-" . $key . "-gallery"];
+  $ImageIds = strlen($ImageIds) == 0 ? [] : explode(",", $ImageIds);
+
+  $data[$key] = $ImageIds;
+
+  foreach ($ImageIds as $item) {
+    array_push($data["all"], $item);
+  }
+}
 ?>
 
 <body>
@@ -33,11 +38,7 @@ rsort($mergedArray)
             </button>
           </li>
           <?php
-          $tabs = $matindesign_redux["site-tabs-sort"]["tabs"];
-          if ($tabs) : foreach ($tabs as $key => $value) :
-              if ($key === "placebo") {
-                continue;
-              };
+          if ($tabs) : foreach ($filteredTabs as $key => $value) :
               $arr = $matindesign_redux["projects-" . $key . "-gallery"];
               $arr = strlen($arr) == 0 ? [] : explode(",", $arr);
               if (count($arr) > 0) :
@@ -53,60 +54,17 @@ rsort($mergedArray)
         </ul>
       </div>
       <div id="projects">
-        <div data-tab="all" class="project [&.active]:block hidden active">
-          <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($mergedArray as $img) : ?>
-              <li class="mb-2">
-                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-        <div data-tab="graphic" class="project [&.active]:block hidden">
-          <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($graphicArr as $img) : ?>
-              <li class="mb-2">
-                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-        <div data-tab="sketch" class="project [&.active]:block hidden">
-          <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($sketchArr as $img) : ?>
-              <li class="mb-2">
-                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-        <div data-tab="architecture" class="project [&.active]:block hidden">
-          <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($architectureArr as $img) : ?>
-              <li class="mb-2">
-                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-        <div data-tab="photography" class="project [&.active]:block hidden">
-          <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($photographyArr as $img) : ?>
-              <li class="mb-2">
-                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
-        <div data-tab="webdesign" class="project [&.active]:block hidden">
-          <ul class="images xl:columns-4 lg:columns-3 columns-2 gap-2 mt-4">
-            <?php foreach ($webdesignArr as $img) : ?>
-              <li class="mb-2">
-                <img loading="lazy" class="w-full border-4 border-white duration-300 hover:shadow-[0_4px_4px_rgba(0,0,0,0.1)] hover:translate-y-[-2px] cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
-              </li>
-            <?php endforeach; ?>
-          </ul>
-        </div>
+        <?php foreach ($data as $key => $value) : ?>
+          <div data-tab="<?php echo $key ?>" class="project [&.active]:block hidden <?php if ($key === 'all') echo 'active' ?>">
+            <ul class="images xl:columns-5 lg:columns-3 columns-2 gap-4 mt-4">
+              <?php foreach ($value as $img) : ?>
+                <li class="mb-4 border-[10px] border-white duration-300 hover:shadow-[0_4px_8px_rgba(0,0,0,0.1)] rounded-[22px] hover:translate-y-[-2px]">
+                  <img loading="lazy" class="w-full cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        <?php endforeach; ?>
       </div>
     </main>
   </div>
