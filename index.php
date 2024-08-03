@@ -33,7 +33,7 @@ foreach ($filteredTabs as $key => $value) {
       <div class="justify-end lg:flex hidden">
         <ul id="main-tabs" class="flex flex-row lg:gap-2 xl:gap-4">
           <li>
-            <button id="all" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[<?php echo $matindesign_redux["site-main-color"] ?>] [&.active]:text-[white] duration-300 hover:text-[<?php echo $matindesign_redux["site-main-color"] ?>] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)] active" data-tabs="all">
+            <button id="all" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[<?php echo $matindesign_redux["site-main-color"] ?>] [&.active]:text-[white] duration-300 hover:text-[<?php echo $matindesign_redux["site-main-color"] ?>] hover:shadow-[4px_4px_10px_0px_<?php echo $matindesign_redux["site-main-color"] ?>1a] active" data-tabs="all">
               <span>All</span>
             </button>
           </li>
@@ -44,7 +44,7 @@ foreach ($filteredTabs as $key => $value) {
               if (count($arr) > 0) :
           ?>
                 <li>
-                  <button id="<?php echo $key ?>" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[<?php echo $matindesign_redux["site-main-color"] ?>] [&.active]:text-[white] duration-300 hover:text-[<?php echo $matindesign_redux["site-main-color"] ?>] hover:shadow-[4px_4px_10px_0px_rgba(255,121,0,0.1)]" data-tabs="graphic">
+                  <button id="<?php echo $key ?>" class="xl:px-[20px] lg:px-[14px] px-[20px] py-[5px] text-[#999] rounded-[50px] text-[14px] [&.active]:bg-[<?php echo $matindesign_redux["site-main-color"] ?>] [&.active]:text-[white] duration-300 hover:text-[<?php echo $matindesign_redux["site-main-color"] ?>] hover:shadow-[4px_4px_10px_0px_<?php echo $matindesign_redux["site-main-color"] ?>1a]" data-tabs="graphic">
                     <span><?php echo $value ?></span>
                   </button>
                 </li>
@@ -58,7 +58,7 @@ foreach ($filteredTabs as $key => $value) {
           <div data-tab="<?php echo $key ?>" class="project [&.active]:block hidden <?php if ($key === 'all') echo 'active' ?>">
             <ul class="images xl:columns-5 lg:columns-3 columns-2 gap-4 mt-4">
               <?php foreach ($value as $img) : ?>
-                <li class="mb-4 border-[10px] border-white duration-300 hover:shadow-[0_4px_8px_rgba(0,0,0,0.1)] rounded-[22px] hover:translate-y-[-2px]">
+                <li class="mb-4 border-[10px] border-white duration-300 hover:shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-[22px] hover:translate-y-[-2px]">
                   <img loading="lazy" class="w-full cursor-pointer rounded-[12px]" src="<?php echo wp_get_attachment_url($img) ?>" alt="" />
                 </li>
               <?php endforeach; ?>
