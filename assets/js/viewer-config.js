@@ -3,10 +3,12 @@ const options = {
   title: false,
   navbar: false,
   viewed() {
-    const viewerCanvas = document.querySelector(".viewer-container");
+    const viewerCanvases = document.querySelectorAll(".viewer-container");
 
-    viewerCanvas.addEventListener("contextmenu", (event) => {
-      event.preventDefault();
+    viewerCanvases.forEach((vc) => {
+      vc.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+      });
     });
   },
 };
