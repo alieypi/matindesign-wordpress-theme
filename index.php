@@ -19,6 +19,7 @@ foreach ($filteredTabs as $key => $value) {
   $data[$key] = $ImageIds;
 
   foreach ($ImageIds as $item) {
+    shuffle($data["all"]);
     array_push($data["all"], $item);
   }
 }

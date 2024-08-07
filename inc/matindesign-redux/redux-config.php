@@ -359,7 +359,7 @@ Redux::set_section(
                     'tabs'  => array(
                         'graphic' => 'Graphic',
                         'sketch'     => 'Sketch',
-                        'architecture'     => 'Architecture',
+                        'architecture'     => '3D Rendering',
                         'photography' => 'Photography',
                         'webdesign'   => 'UI & UX',
                     ),
@@ -418,7 +418,7 @@ Redux::set_section(
 Redux::set_section(
     $opt_name,
     array(
-        'title'      => esc_html__('Architecture', 'matindesign'),
+        'title'      => esc_html__('3D Rendering', 'matindesign'),
         'id'         => 'projects-architecture',
         'subsection' => true,
         'fields'     => array(
